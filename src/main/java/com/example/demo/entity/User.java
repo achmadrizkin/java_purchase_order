@@ -17,16 +17,16 @@ public class User {
     @Column(name = "last_name", length = 500)
     private String lastName;
 
-    @Column(name = "email", length = 100) // Updated length for the email column
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "phone", length = 500)
+    @Column(name = "phone")
     private String phone;
 
-    @Column(name = "created_by", length = 500)
+    @Column(name = "created_by")
     private String createdBy;
 
-    @Column(name = "updated_by", length = 500)
+    @Column(name = "updated_by")
     private String updatedBy;
 
     @Column(name = "created_datetime")

@@ -11,22 +11,28 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 500)
+    @Column(name = "name", length = 500)
     private String name;
 
-    @Column(length = 500)
+    @Column(name = "description", length = 500)
     private String description;
 
+    @Column(name = "price")
     private Integer price;
+
+    @Column(name = "cost")
     private Integer cost;
 
-    @Column(length = 500)
+    @Column(name = "created_by")
     private String createdBy;
 
-    @Column(length = 500)
+    @Column(name = "updated_by")
     private String updatedBy;
 
+    @Column(name = "created_datetime")
     private LocalDateTime createdDatetime;
+
+    @Column(name = "updated_datetime")
     private LocalDateTime updatedDatetime;
 
     public Long getId() {
