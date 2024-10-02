@@ -11,21 +11,27 @@ public class PurchaseOrderHeader {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "datetime", length = 500)
     private LocalDateTime datetime;
 
-    @Column(length = 500)
+    @Column(name = "description", length = 500)
     private String description;
 
+    @Column(name = "total_price")
     private Integer totalPrice;
+
+    @Column(name = "total_cost")
     private Integer totalCost;
 
-    @Column(length = 500)
+    @Column(name = "created_by", length = 500)
     private String createdBy;
 
-    @Column(length = 500)
+    @Column(name = "updated_by", length = 500)
     private String updatedBy;
 
+    @Column(name = "created_datetime")
     private LocalDateTime createdDatetime;
+    @Column(name = "updated_datetime")
     private LocalDateTime updatedDatetime;
 
     public Long getId() {

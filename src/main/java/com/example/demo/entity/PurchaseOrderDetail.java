@@ -11,25 +11,31 @@ public class PurchaseOrderDetail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "poh_id")
-    private PurchaseOrderHeader purchaseOrderHeader;
+    @Column(name = "poh_id")
+    private Long purchaseOrderHeaderId;
 
-    @ManyToOne
-    @JoinColumn(name = "item_id")
-    private Item item;
+    @Column(name = "item_id")
+    private Long itemId;
 
+    @Column(name = "item_qty")
     private Integer itemQty;
+
+    @Column(name = "item_cost")
     private Integer itemCost;
+
+    @Column(name = "item_price")
     private Integer itemPrice;
 
-    @Column(length = 500)
+    @Column(name = "created_by", length = 500)
     private String createdBy;
 
-    @Column(length = 500)
+    @Column(name = "updated_by", length = 500)
     private String updatedBy;
 
+    @Column(name = "created_datetime")
     private LocalDateTime createdDatetime;
+
+    @Column(name = "updated_datetime")
     private LocalDateTime updatedDatetime;
 
     public Long getId() {
@@ -40,20 +46,20 @@ public class PurchaseOrderDetail {
         this.id = id;
     }
 
-    public PurchaseOrderHeader getPurchaseOrderHeader() {
-        return purchaseOrderHeader;
+    public Long getPurchaseOrderHeaderId() {
+        return purchaseOrderHeaderId;
     }
 
-    public void setPurchaseOrderHeader(PurchaseOrderHeader purchaseOrderHeader) {
-        this.purchaseOrderHeader = purchaseOrderHeader;
+    public void setPurchaseOrderHeaderId(Long purchaseOrderHeaderId) {
+        this.purchaseOrderHeaderId = purchaseOrderHeaderId;
     }
 
-    public Item getItem() {
-        return item;
+    public Long getItemId() {
+        return itemId;
     }
 
-    public void setItem(Item item) {
-        this.item = item;
+    public void setItemId(Long itemId) {
+        this.itemId = itemId;
     }
 
     public Integer getItemQty() {
