@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.PurchaseOrderHeader;
 import com.example.demo.entity.Response;
+import com.example.demo.entity.response.PurchaseOrderResponse;
 import com.example.demo.service.PurchaseOrderHeaderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -46,5 +47,10 @@ public class PurchaseOrderHeaderController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Response<Void>> deletePurchaseOrderHeader(@PathVariable Long id) {
         return purchaseOrderHeaderService.deletePurchaseOrderHeader(id);
+    }
+
+    @GetMapping("/{id}/details")
+    public ResponseEntity<Response<PurchaseOrderResponse>> getPurchaseOrderWithDetailsAndItems(@PathVariable Long id) {
+        return purchaseOrderHeaderService.getPurchaseOrderWithDetailsAndItems(id);
     }
 }

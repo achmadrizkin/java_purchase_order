@@ -2,6 +2,8 @@ package com.example.demo.service;
 
 import com.example.demo.entity.PurchaseOrderHeader;
 import com.example.demo.entity.Response;
+import com.example.demo.utils.Logic;
+import com.example.demo.entity.response.PurchaseOrderResponse;
 import com.example.demo.repo.PurchaseOrderHeaderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -117,4 +119,24 @@ public class PurchaseOrderHeaderService {
         response.setMessage("Purchase order header deleted successfully.");
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
+
+    // Get purchase order with details and items by ID
+    public ResponseEntity<Response<PurchaseOrderResponse>> getPurchaseOrderWithDetailsAndItems(Long purchaseOrderId) {
+        Response<PurchaseOrderResponse> response = new Response<>();
+        List<Object[]> result = purchaseOrderHeaderRepository.findPurchaseOrderWithDetailsAndItems(purchaseOrderId);
+
+        if (result.isEmpty()) {
+            response.setStatusCode(404);
+            response.setPayload(null);
+            response.setMessage("Purchase order with id " + purchaseOrderId + " not found.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+        } else {
+            PurchaseOrderResponse purchaseOrderResponse = Logic.mapResultToPurchaseOrderResponse(result);
+            response.setStatusCode(200);
+            response.setPayload(purchaseOrderResponse);
+            response.setMessage("Purchase order all details retrieved successfully.");
+            return ResponseEntity.status(HttpStatus.OK).body(response);
+        }
+    }
+
 }
