@@ -53,7 +53,9 @@ public class Logic {
             itemResponse.setPrice(item.getPrice());
             itemResponse.setCost(item.getCost());
             itemResponse.setCreatedBy(item.getCreatedBy());
+            itemResponse.setUpdatedBy(item.getUpdatedBy());
             itemResponse.setCreatedDatetime(item.getCreatedDatetime());
+            itemResponse.setUpdatedDatetime(item.getUpdatedDatetime());
 
             detailResponse.addItem(itemResponse);
             purchaseOrderResponse.addDetail(detailResponse);

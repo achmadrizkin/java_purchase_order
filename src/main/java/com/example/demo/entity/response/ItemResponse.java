@@ -8,6 +8,7 @@ public class ItemResponse {
     private Integer price;
     private Integer cost;
     private String createdBy;
+    private String updatedBy;
     private LocalDateTime createdDatetime;
     private LocalDateTime updatedDatetime;
 
@@ -65,6 +66,14 @@ public class ItemResponse {
 
     public void setUpdatedDatetime(LocalDateTime updatedDatetime) {
         this.updatedDatetime = updatedDatetime;
+    }
+
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
     }
 }
 
