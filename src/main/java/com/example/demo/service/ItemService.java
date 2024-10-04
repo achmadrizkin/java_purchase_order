@@ -58,6 +58,20 @@ public class ItemService {
     public ResponseEntity<Response<Item>> createItem(Item item) {
         Response<Item> response = new Response<>();
 
+        if (item.getCost() <= 0) {
+            response.setStatusCode(400);
+            response.setPayload(null);
+            response.setMessage("cost cannot <= 0");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+        }
+
+        if (item.getPrice() <= 0) {
+            response.setStatusCode(400);
+            response.setPayload(null);
+            response.setMessage("price cannot <= 0");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+        }
+
         // Set createdDatetime only during creation
         item.setCreatedDatetime(LocalDateTime.now());
         item.setCreatedBy(item.getCreatedBy());
@@ -81,6 +95,20 @@ public class ItemService {
             response.setPayload(null);
             response.setMessage("Item not found with id " + id);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+        }
+
+        if (itemDetails.getCost() <= 0) {
+            response.setStatusCode(400);
+            response.setPayload(null);
+            response.setMessage("cost cannot <= 0");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+        }
+
+        if (itemDetails.getPrice() <= 0) {
+            response.setStatusCode(400);
+            response.setPayload(null);
+            response.setMessage("price cannot <= 0");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
         }
 
         Item itemToUpdate = existingItem.get();

@@ -30,7 +30,7 @@ class LogicTest {
         item = mock(Item.class);
 
         // Mock PurchaseOrderHeader
-        when(purchaseOrderHeader.getId()).thenReturn(1L);
+        when(purchaseOrderHeader.getId()).thenReturn(1);
         when(purchaseOrderHeader.getDatetime()).thenReturn(LocalDateTime.now());
         when(purchaseOrderHeader.getDescription()).thenReturn("Sample PO Description");
         when(purchaseOrderHeader.getTotalPrice()).thenReturn(1000);
@@ -41,8 +41,8 @@ class LogicTest {
         when(purchaseOrderHeader.getUpdatedDatetime()).thenReturn(LocalDateTime.now());
 
         // Mock PurchaseOrderDetail
-        when(purchaseOrderDetail.getId()).thenReturn(101L);
-        when(purchaseOrderDetail.getPurchaseOrderHeaderId()).thenReturn(1L);
+        when(purchaseOrderDetail.getId()).thenReturn(101);
+        when(purchaseOrderDetail.getPurchaseOrderHeaderId()).thenReturn(1);
         when(purchaseOrderDetail.getItemQty()).thenReturn(5);
         when(purchaseOrderDetail.getItemCost()).thenReturn(200);
         when(purchaseOrderDetail.getItemPrice()).thenReturn(250);
@@ -71,14 +71,14 @@ class LogicTest {
 
         // Assert
         assertNotNull(response);
-        assertEquals(1L, response.getId());
+        assertEquals(1, response.getId());
         assertEquals("Sample PO Description", response.getDescription());
         assertEquals(1000, response.getTotalPrice());
         assertEquals(900, response.getTotalCost());
         assertEquals(1, response.getPurchaseOrderDetails().size());
 
         PurchaseOrderDetailResponse detailResponse = response.getPurchaseOrderDetails().get(0);
-        assertEquals(101L, detailResponse.getId());
+        assertEquals(101, detailResponse.getId());
         assertEquals(5, detailResponse.getItemQty());
         assertEquals(250, detailResponse.getItemPrice());
 

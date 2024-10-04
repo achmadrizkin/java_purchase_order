@@ -102,8 +102,8 @@ public class PurchaseOrderDetailServiceTest {
     @Test
     void testCreatePurchaseOrderDetail_Success() {
         PurchaseOrderDetail purchaseOrderDetail = new PurchaseOrderDetail();
-        purchaseOrderDetail.setPurchaseOrderHeaderId(1L);
-        purchaseOrderDetail.setItemId(1L);
+        purchaseOrderDetail.setPurchaseOrderHeaderId(1);
+        purchaseOrderDetail.setItemId(1);
 
         when(purchaseOrderHeaderRepository.existsById(1L)).thenReturn(true);
         when(itemRepository.existsById(1L)).thenReturn(true);
@@ -122,8 +122,8 @@ public class PurchaseOrderDetailServiceTest {
     @Test
     void testCreatePurchaseOrderDetail_InvalidHeaderId_Failure() {
         PurchaseOrderDetail purchaseOrderDetail = new PurchaseOrderDetail();
-        purchaseOrderDetail.setPurchaseOrderHeaderId(1L);
-        purchaseOrderDetail.setItemId(1L);
+        purchaseOrderDetail.setPurchaseOrderHeaderId(1);
+        purchaseOrderDetail.setItemId(1);
 
         when(purchaseOrderHeaderRepository.existsById(1L)).thenReturn(false);
 

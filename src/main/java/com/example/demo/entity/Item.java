@@ -9,7 +9,7 @@ public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "name", length = 500)
     private String name;
@@ -35,11 +35,11 @@ public class Item {
     @Column(name = "updated_datetime")
     private LocalDateTime updatedDatetime;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

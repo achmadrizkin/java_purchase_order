@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PurchaseOrderDetailResponse {
-    private Long id;
-    private Long purchaseOrderHeaderId;
+    private Integer id;
+    private Integer purchaseOrderHeaderId;
     private List<ItemResponse> items = new ArrayList<>();  // Renamed from 'itemId' to 'items'
     private Integer itemQty;
     private Integer itemCost;
@@ -18,19 +18,19 @@ public class PurchaseOrderDetailResponse {
 
     // Getters and Setters
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Long getPurchaseOrderHeaderId() {
+    public Integer getPurchaseOrderHeaderId() {
         return purchaseOrderHeaderId;
     }
 
-    public void setPurchaseOrderHeaderId(Long purchaseOrderHeaderId) {
+    public void setPurchaseOrderHeaderId(Integer purchaseOrderHeaderId) {
         this.purchaseOrderHeaderId = purchaseOrderHeaderId;
     }
 

@@ -14,8 +14,8 @@ class PurchaseOrderDetailResponseTest {
     void testPurchaseOrderDetailResponse_Success() {
         // Arrange
         PurchaseOrderDetailResponse detailResponse = new PurchaseOrderDetailResponse();
-        Long id = 1L;
-        Long purchaseOrderHeaderId = 101L;
+        Integer id = 1;
+        Integer purchaseOrderHeaderId = 101;
         Integer itemQty = 5;
         Integer itemCost = 100;
         Integer itemPrice = 150;

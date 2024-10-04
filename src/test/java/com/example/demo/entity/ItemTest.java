@@ -13,7 +13,7 @@ public class ItemTest {
         LocalDateTime now = LocalDateTime.now();
 
         // Act
-        item.setId(1L);
+        item.setId(1);
         item.setName("Item Name");
         item.setDescription("Item Description");
         item.setPrice(100);

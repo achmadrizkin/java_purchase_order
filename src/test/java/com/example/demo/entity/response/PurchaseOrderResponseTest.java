@@ -14,7 +14,7 @@ class PurchaseOrderResponseTest {
     void testPurchaseOrderResponse_Success() {
         // Arrange
         PurchaseOrderResponse purchaseOrderResponse = new PurchaseOrderResponse();
-        Long id = 1L;
+        Integer id = 1;
         LocalDateTime datetime = LocalDateTime.now();
         String description = "Test Purchase Order";
         Integer totalPrice = 1000;
@@ -26,10 +26,10 @@ class PurchaseOrderResponseTest {
 
         // Creating sample PurchaseOrderDetailResponses
         PurchaseOrderDetailResponse detail1 = new PurchaseOrderDetailResponse();
-        detail1.setId(1L);
+        detail1.setId(1);
         detail1.setItemQty(5);
         PurchaseOrderDetailResponse detail2 = new PurchaseOrderDetailResponse();
-        detail2.setId(2L);
+        detail2.setId(2);
         detail2.setItemQty(10);
         List<PurchaseOrderDetailResponse> details = new ArrayList<>();
         details.add(detail1);
@@ -95,7 +95,7 @@ class PurchaseOrderResponseTest {
         // Arrange
         PurchaseOrderResponse purchaseOrderResponse = new PurchaseOrderResponse();
         PurchaseOrderDetailResponse detail = new PurchaseOrderDetailResponse();
-        detail.setId(1L);
+        detail.setId(1);
         detail.setItemQty(5);
 
         // Act

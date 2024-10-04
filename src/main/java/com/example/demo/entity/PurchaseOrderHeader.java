@@ -9,7 +9,7 @@ public class PurchaseOrderHeader {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "datetime", length = 500)
     private LocalDateTime datetime;
@@ -34,11 +34,11 @@ public class PurchaseOrderHeader {
     @Column(name = "updated_datetime")
     private LocalDateTime updatedDatetime;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

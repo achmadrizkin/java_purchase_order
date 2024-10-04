@@ -9,13 +9,13 @@ public class PurchaseOrderDetail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "poh_id")
-    private Long purchaseOrderHeaderId;
+    private Integer purchaseOrderHeaderId;
 
     @Column(name = "item_id")
-    private Long itemId;
+    private Integer itemId;
 
     @Column(name = "item_qty")
     private Integer itemQty;
@@ -38,27 +38,27 @@ public class PurchaseOrderDetail {
     @Column(name = "updated_datetime")
     private LocalDateTime updatedDatetime;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Long getPurchaseOrderHeaderId() {
+    public Integer getPurchaseOrderHeaderId() {
         return purchaseOrderHeaderId;
     }
 
-    public void setPurchaseOrderHeaderId(Long purchaseOrderHeaderId) {
+    public void setPurchaseOrderHeaderId(Integer purchaseOrderHeaderId) {
         this.purchaseOrderHeaderId = purchaseOrderHeaderId;
     }
 
-    public Long getItemId() {
+    public Integer getItemId() {
         return itemId;
     }
 
-    public void setItemId(Long itemId) {
+    public void setItemId(Integer itemId) {
         this.itemId = itemId;
     }
 

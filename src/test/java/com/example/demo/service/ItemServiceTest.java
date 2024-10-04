@@ -34,7 +34,7 @@ public class ItemServiceTest {
     public void setUp() {
         MockitoAnnotations.openMocks(this);
         item = new Item();
-        item.setId(1L);
+        item.setId(1);
         item.setName("Item 1");
         item.setDescription("Description of item 1");
         item.setPrice(100);
@@ -123,7 +123,7 @@ public class ItemServiceTest {
         when(itemRepository.save(any(Item.class))).thenReturn(item);
 
         Item updatedItem = new Item();
-        updatedItem.setId(1L);
+        updatedItem.setId(1);
         updatedItem.setName("Updated Item");
         updatedItem.setDescription("Updated description");
         updatedItem.setPrice(200);

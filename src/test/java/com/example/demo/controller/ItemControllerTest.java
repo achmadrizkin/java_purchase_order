@@ -33,7 +33,7 @@ public class ItemControllerTest {
     public void setUp() {
         MockitoAnnotations.openMocks(this);
         item = new Item();
-        item.setId(1L);
+        item.setId(1);
         item.setName("Item 1");
         item.setDescription("Test Description");
         item.setPrice(100);
@@ -161,7 +161,7 @@ public class ItemControllerTest {
     public void testUpdateItem_Success() {
         // Arrange
         Item updatedItem = new Item();
-        updatedItem.setId(1L);
+        updatedItem.setId(1);
         updatedItem.setName("Updated Item");
         updatedItem.setDescription("Updated Description");
 

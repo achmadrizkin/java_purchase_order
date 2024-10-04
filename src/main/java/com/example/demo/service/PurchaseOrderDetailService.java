@@ -66,7 +66,7 @@ public class PurchaseOrderDetailService {
         Response<PurchaseOrderDetail> response = new Response<>();
 
         // Check if purchaseOrderHeaderId exists
-        if (!purchaseOrderHeaderRepository.existsById(purchaseOrderDetail.getPurchaseOrderHeaderId())) {
+        if (!purchaseOrderHeaderRepository.existsById(purchaseOrderDetail.getPurchaseOrderHeaderId().longValue())) {
             response.setStatusCode(400);
             response.setPayload(null);
             response.setMessage("Purchase order header ID " + purchaseOrderDetail.getPurchaseOrderHeaderId() + " does not exist.");
@@ -74,7 +74,7 @@ public class PurchaseOrderDetailService {
         }
 
         // Check if itemId exists
-        if (!itemRepository.existsById(purchaseOrderDetail.getItemId())) {
+        if (!itemRepository.existsById(purchaseOrderDetail.getItemId().longValue())) {
             response.setStatusCode(400);
             response.setPayload(null);
             response.setMessage("Item ID " + purchaseOrderDetail.getItemId() + " does not exist.");
@@ -106,7 +106,7 @@ public class PurchaseOrderDetailService {
         }
 
         // Check if purchaseOrderHeaderId exists
-        if (!purchaseOrderHeaderRepository.existsById(purchaseOrderDetailDetails.getPurchaseOrderHeaderId())) {
+        if (!purchaseOrderHeaderRepository.existsById(purchaseOrderDetailDetails.getPurchaseOrderHeaderId().longValue())) {
             response.setStatusCode(400);
             response.setPayload(null);
             response.setMessage("Purchase order header ID " + purchaseOrderDetailDetails.getPurchaseOrderHeaderId() + " does not exist.");
@@ -114,7 +114,7 @@ public class PurchaseOrderDetailService {
         }
 
         // Check if itemId exists
-        if (!itemRepository.existsById(purchaseOrderDetailDetails.getItemId())) {
+        if (!itemRepository.existsById(purchaseOrderDetailDetails.getItemId().longValue())) {
             response.setStatusCode(400);
             response.setPayload(null);
             response.setMessage("Item ID " + purchaseOrderDetailDetails.getItemId() + " does not exist.");

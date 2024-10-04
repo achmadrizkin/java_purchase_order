@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PurchaseOrderResponse {
-    private Long id;
+    private Integer id;
     private LocalDateTime datetime;
     private String description;
     private Integer totalPrice;
@@ -18,11 +18,11 @@ public class PurchaseOrderResponse {
 
     // Getters and Setters
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
